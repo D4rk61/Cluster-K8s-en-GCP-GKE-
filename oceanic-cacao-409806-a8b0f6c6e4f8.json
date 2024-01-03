@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "oceanic-cacao-409806",
+  "private_key_id": "a8b0f6c6e4f81bad377fb937c52c2eb5aca41613",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDS2l1R37QaYhFV\nKPvy3mxUTIkczsnQHpCNdcE2I/6tuD2iA8N8cjawZDao6Ew8v2r/NNgJVxVNcAu0\nk6TWQKYIDm63VKertm+INM/qd80NMFv1BHQxMeNdyEq7OFf8B8HnnJ5qUybadWvK\nYrXDBmLhMIISLYjnqjHqImvBT4PCwS99KvIYVgukVfeTOG3/DYPoE7udMbM7L/2p\npl7WbvjhGbBSmEz4WFCNYp2b2zHcrVNLf/r4YV6cOzWYnmVr/N9r+cq27FKX3iG6\nLWWwYsag5jrhcDBzxzRumvexs7y6Efuz88pOwhKm7NN4CTEhswjLYaTV7KX7wDvR\n0EwHX/DRAgMBAAECggEATFMFEr0CacZz9bqnMOv4lK87trTX8sENnFcywFFZQDMA\nBGSOX77MMx+jdZLY/ehgZ88OIJtoN6bGZfBH69JtB1+KDkzTgOHCD7DmTj5deFe4\nAcJB+QjQ/8Kf4pNrrex08U0NPvmoh82XXiRLHTRzmIZBnyjidNFzzgf1r30D+fvh\n7Ag+iwJ9aw4tCoxSr3bs4glZwItvVUnYnqPP2n1MT9A/WZt6L+UlT+Nxb8fF8ON4\nll7iM/UlQQfUn9PlgCh6hL2d+rlNWg2i7Sun88pR9MDcqKyzImj0T0LcLgiDbQtp\na0CNM7ilTXfW2eWYR9u6tg65c7mO4QSh52fQmJTuPQKBgQDpGuA1TROg8jx9jAbY\nQO7HgIZT+PpiPMEHgBx+EMMme2Ph8e7j5DH10XP9FYAzKGwyJEum3d8I383xo7CK\nJUrYQAXAz9Q8/f2RqTxZwxNR6tttwX+65A//Kv0luY60rJQSWcA6l11VmbU6zT0v\neFQo6GhbMohYBKxIoltOfVZ3UwKBgQDnj/2ulwpXTEntnaQRAJDWqPHRw27cLpT4\nHvrpIdDTu/VVEHabjlXNGVq1VrL9UNHYaUjj8P3WjINOChiLBXOzkd0yWvTRYAwV\nfagjytcdcRaaN4DhT3xCONhTTZ1Ip1gNCuLkZGDad531WFCYovinbeUq1dRwumz/\n+Pmlk2MmywKBgH+w1Tjda+8yQqiTV/yGNUbbxLmjHaVKmoK9Tt5P2FbwKJrQqIf1\nrNh3UA5HBN8BOaON9lMGHvMBhhLkFATYwNMM3xnrvttaVti/1+tjzOWGvYS2Bn4e\nCBVDO0C7EM0v7DzRJVfzKpGFjZ0UaHvkclWmWeP7Hmz4wldXeKTaS885AoGAOzRB\ndAYCCtfifvIzJHW0km2Xhj4ldf4i8F1bYYfX0IrZ6unOqW722P2Gh56nHMUxIdep\nXz4aaGR8ndNO+xxlvJ+qollHBtE7xbLe7mfKICjt0ngmZ3TfHD9Ub9gEQrMmfA8w\ne5x+dtzmcfgmgyAH2ybp1M3fBwNjIv8RNRg93YkCgYB+RZtKOj/IhvoH6dc9EXCM\n+YwoTGjEk/ncy/NcsTaMVm94ZyHJ70DNtEYzMn1SNUZ7Jotkht4AbZIT+EVy6EWv\nWv2YSExx23R1j0SV5i1SKNcfeD+AoCBp5jIh9fYHokcIW3W2qu8fV0gz3BmpYtB4\njprVnpRCg56eIoo0SgMO5w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+  "client_id": "102423583192020089496",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/k8s-admin%40oceanic-cacao-409806.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

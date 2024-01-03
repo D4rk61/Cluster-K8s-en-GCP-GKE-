@@ -1,0 +1,682 @@
+2023-12-31T13:18:00.195-0600 [INFO]  Terraform version: 1.6.6
+2023-12-31T13:18:00.195-0600 [DEBUG] using github.com/hashicorp/go-tfe v1.36.0
+2023-12-31T13:18:00.195-0600 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2023-12-31T13:18:00.195-0600 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2023-12-31T13:18:00.195-0600 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2023-12-31T13:18:00.195-0600 [INFO]  Go runtime version: go1.21.5
+2023-12-31T13:18:00.195-0600 [INFO]  CLI args: []string{"terraform", "destroy", "--auto-approve=true"}
+2023-12-31T13:18:00.195-0600 [DEBUG] Attempting to open CLI config file: /home/blackshark/.terraformrc
+2023-12-31T13:18:00.195-0600 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2023-12-31T13:18:00.195-0600 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2023-12-31T13:18:00.195-0600 [DEBUG] ignoring non-existing provider search directory /home/blackshark/.terraform.d/plugins
+2023-12-31T13:18:00.195-0600 [DEBUG] ignoring non-existing provider search directory /home/blackshark/.local/share/terraform/plugins
+2023-12-31T13:18:00.195-0600 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2023-12-31T13:18:00.195-0600 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2023-12-31T13:18:00.196-0600 [INFO]  CLI command args: []string{"destroy", "--auto-approve=true"}
+2023-12-31T13:18:00.198-0600 [DEBUG] New state was assigned lineage "5cbf5e50-f903-d80e-1696-88bc2ef22c55"
+2023-12-31T13:18:00.691-0600 [DEBUG] checking for provisioner in "."
+2023-12-31T13:18:00.703-0600 [DEBUG] checking for provisioner in "/usr/bin"
+2023-12-31T13:18:00.704-0600 [INFO]  backend/local: starting Apply operation
+2023-12-31T13:18:00.706-0600 [DEBUG] created provider logger: level=debug
+2023-12-31T13:18:00.706-0600 [INFO]  provider: configuring client automatic mTLS
+2023-12-31T13:18:00.722-0600 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5"]
+2023-12-31T13:18:00.722-0600 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841043
+2023-12-31T13:18:00.723-0600 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5
+2023-12-31T13:18:00.770-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: configuring server automatic mTLS: timestamp=2023-12-31T13:18:00.768-0600
+2023-12-31T13:18:00.843-0600 [DEBUG] provider.terraform-provider-google_v3.90.1_x5: plugin address: address=/tmp/plugin629552269 network=unix timestamp=2023-12-31T13:18:00.843-0600
+2023-12-31T13:18:00.843-0600 [DEBUG] provider: using plugin: version=5
+2023-12-31T13:18:01.036-0600 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-12-31T13:18:01.037-0600 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841043
+2023-12-31T13:18:01.037-0600 [DEBUG] provider: plugin exited
+2023-12-31T13:18:01.038-0600 [DEBUG] Building and walking validate graph
+2023-12-31T13:18:01.038-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.038-0600 [DEBUG] ProviderTransformer: "google_container_cluster.k8s-cluster" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.038-0600 [DEBUG] ProviderTransformer: "google_container_node_pool.default" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.038-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "output.endpoint (expand)" references: [google_container_cluster.k8s-cluster]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: [var.project_id var.location]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "google_container_cluster.k8s-cluster" references: [var.project_id var.initial_node_count var.location var.cluster-name google_compute_network.vpc-main google_compute_subnetwork.subnet]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "google_container_node_pool.default" references: [var.location var.project_id google_container_cluster.k8s-cluster var.cluster-name var.machine_type]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "var.location" references: []
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "var.initial_node_count" references: []
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "var.machine_type" references: []
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "google_compute_network.vpc-main" references: [var.project_id]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "google_compute_subnetwork.subnet" references: [google_compute_network.vpc-main var.location var.project_id]
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "var.cluster-name" references: []
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "var.project_id" references: []
+2023-12-31T13:18:01.039-0600 [DEBUG] ReferenceTransformer: "output.master_version (expand)" references: [google_container_cluster.k8s-cluster]
+2023-12-31T13:18:01.040-0600 [DEBUG] Starting graph walk: walkValidate
+2023-12-31T13:18:01.041-0600 [DEBUG] created provider logger: level=debug
+2023-12-31T13:18:01.041-0600 [INFO]  provider: configuring client automatic mTLS
+2023-12-31T13:18:01.047-0600 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5"]
+2023-12-31T13:18:01.047-0600 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841052
+2023-12-31T13:18:01.047-0600 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5
+2023-12-31T13:18:01.088-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: configuring server automatic mTLS: timestamp=2023-12-31T13:18:01.088-0600
+2023-12-31T13:18:01.143-0600 [DEBUG] provider: using plugin: version=5
+2023-12-31T13:18:01.143-0600 [DEBUG] provider.terraform-provider-google_v3.90.1_x5: plugin address: address=/tmp/plugin679421327 network=unix timestamp=2023-12-31T13:18:01.143-0600
+2023-12-31T13:18:01.322-0600 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-12-31T13:18:01.325-0600 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841052
+2023-12-31T13:18:01.325-0600 [DEBUG] provider: plugin exited
+2023-12-31T13:18:01.325-0600 [INFO]  backend/local: apply calling Plan
+2023-12-31T13:18:01.325-0600 [DEBUG] Building and walking plan graph for NormalMode
+2023-12-31T13:18:01.325-0600 [DEBUG] ProviderTransformer: "google_container_node_pool.default (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.325-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.325-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.325-0600 [DEBUG] ProviderTransformer: "google_container_cluster.k8s-cluster (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "google_compute_subnetwork.subnet (expand)" references: [var.project_id var.location google_compute_network.vpc-main (expand)]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "google_container_cluster.k8s-cluster (expand)" references: [var.location var.initial_node_count var.cluster-name var.project_id google_compute_network.vpc-main (expand) google_compute_subnetwork.subnet (expand)]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "google_container_node_pool.default (expand)" references: [var.location var.project_id google_container_cluster.k8s-cluster (expand) var.cluster-name var.machine_type]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "var.location" references: []
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "var.initial_node_count" references: []
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "var.machine_type" references: []
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "var.cluster-name" references: []
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "google_compute_network.vpc-main (expand)" references: [var.project_id]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "var.project_id" references: []
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "output.endpoint (expand)" references: [google_container_cluster.k8s-cluster (expand)]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "output.master_version (expand)" references: [google_container_cluster.k8s-cluster (expand)]
+2023-12-31T13:18:01.326-0600 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: [var.project_id var.location]
+2023-12-31T13:18:01.327-0600 [DEBUG] Starting graph walk: walkPlan
+2023-12-31T13:18:01.328-0600 [DEBUG] created provider logger: level=debug
+2023-12-31T13:18:01.328-0600 [INFO]  provider: configuring client automatic mTLS
+2023-12-31T13:18:01.334-0600 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5"]
+2023-12-31T13:18:01.336-0600 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841061
+2023-12-31T13:18:01.336-0600 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5
+2023-12-31T13:18:01.375-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: configuring server automatic mTLS: timestamp=2023-12-31T13:18:01.375-0600
+2023-12-31T13:18:01.431-0600 [DEBUG] provider.terraform-provider-google_v3.90.1_x5: plugin address: network=unix address=/tmp/plugin152354797 timestamp=2023-12-31T13:18:01.431-0600
+2023-12-31T13:18:01.432-0600 [DEBUG] provider: using plugin: version=5
+2023-12-31T13:18:01.643-0600 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/google\"]" changed the config value, but that value is unused
+2023-12-31T13:18:01.645-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:01 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:01.645-0600
+2023-12-31T13:18:01.645-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:01 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:01.645-0600
+2023-12-31T13:18:01.645-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:01 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:01.645-0600
+2023-12-31T13:18:01.645-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:01 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:01.645-0600
+2023-12-31T13:18:01.645-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:01 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:01.645-0600
+2023-12-31T13:18:02.153-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [INFO] Terraform is using this identity: k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com: timestamp=2023-12-31T13:18:02.153-0600
+2023-12-31T13:18:02.153-0600 [DEBUG] ReferenceTransformer: "google_compute_network.vpc-main" references: []
+2023-12-31T13:18:02.155-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:02.155-0600
+2023-12-31T13:18:02.155-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:02.155-0600
+2023-12-31T13:18:02.155-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:02.155-0600
+2023-12-31T13:18:02.156-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1?alt=json HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+Content-Type: application/json
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:02.155-0600
+2023-12-31T13:18:02.543-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:02 GMT
+Etag: 8BXHrINckkMasDceJd4njJdF1Ns=/L2yJ_R25YLXMrI33LgpNw9Dd8CM=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "kind": "compute#network",
+  "id": "6416941680376450612",
+  "creationTimestamp": "2023-12-31T01:14:03.016-08:00",
+  "name": "felsv-oceanic-cacao-409806-vpc-1",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+  "selfLinkWithId": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/6416941680376450612",
+  "autoCreateSubnetworks": false,
+  "subnetworks": [
+"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1"
+  ],
+  "routingConfig": {
+    "routingMode": "REGIONAL"
+  },
+  "networkFirewallPolicyEnforcementOrder": "AFTER_CLASSIC_FIREWALL"
+}
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:02.543-0600
+2023-12-31T13:18:02.543-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:02.543-0600
+2023-12-31T13:18:02.544-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:02.543-0600
+2023-12-31T13:18:02.546-0600 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_compute_network.vpc-main, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .delete_default_routes_on_create: planned value cty.False for a non-computed attribute
+      - .description: planned value cty.StringVal("") for a non-computed attribute
+2023-12-31T13:18:02.546-0600 [DEBUG] ReferenceTransformer: "google_compute_subnetwork.subnet" references: []
+2023-12-31T13:18:02.549-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:02.549-0600
+2023-12-31T13:18:02.549-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:02.549-0600
+2023-12-31T13:18:02.549-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:02.549-0600
+2023-12-31T13:18:02.549-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1?alt=json HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+Content-Type: application/json
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:02.549-0600
+2023-12-31T13:18:02.789-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:02 GMT
+Etag: EwIRAht-NKAySNvMpU500tuAzmg=/pIHRrW1PUTMjUQRRoPM-Vwn6MmY=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "kind": "compute#subnetwork",
+  "id": "1034502365974924808",
+  "creationTimestamp": "2023-12-31T01:14:15.879-08:00",
+  "name": "felsv-oceanic-cacao-409806-subnet-1",
+  "network": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+  "ipCidrRange": "10.10.0.0/24",
+  "gatewayAddress": "10.10.0.1",
+  "region": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1",
+  "privateIpGoogleAccess": false,
+  "fingerprint": "Jh4_bNAydys=",
+  "enableFlowLogs": false,
+  "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS",
+  "purpose": "PRIVATE",
+  "logConfig": {
+    "enable": false,
+    "aggregationInterval": "INTERVAL_5_SEC",
+    "flowSampling": 0.5,
+    "metadata": "INCLUDE_ALL_METADATA"
+  },
+  "stackType": "IPV4_ONLY"
+}
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:02.788-0600
+2023-12-31T13:18:02.789-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:02.788-0600
+2023-12-31T13:18:02.789-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:02.788-0600
+2023-12-31T13:18:02.797-0600 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_compute_subnetwork.subnet, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .description: planned value cty.StringVal("") for a non-computed attribute
+      - .private_ip_google_access: planned value cty.False for a non-computed attribute
+      - .ipv6_access_type: planned value cty.StringVal("") for a non-computed attribute
+      - .role: planned value cty.StringVal("") for a non-computed attribute
+2023-12-31T13:18:02.798-0600 [DEBUG] Resource instance state not found for node "google_container_cluster.k8s-cluster", instance google_container_cluster.k8s-cluster
+2023-12-31T13:18:02.798-0600 [DEBUG] ReferenceTransformer: "google_container_cluster.k8s-cluster" references: []
+2023-12-31T13:18:02.800-0600 [DEBUG] refresh: google_container_cluster.k8s-cluster: no state, so not refreshing
+2023-12-31T13:18:02.826-0600 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_container_cluster.k8s-cluster, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .enable_kubernetes_alpha: planned value cty.False for a non-computed attribute
+      - .enable_binary_authorization: planned value cty.False for a non-computed attribute
+      - .ip_allocation_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .logging_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .workload_identity_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .cluster_autoscaling: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .network_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .node_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .node_pool: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .addons_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .authenticator_groups_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .default_snat_status: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .database_encryption: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .monitoring_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .release_channel: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2023-12-31T13:18:02.828-0600 [DEBUG] Resource instance state not found for node "google_container_node_pool.default", instance google_container_node_pool.default
+2023-12-31T13:18:02.828-0600 [DEBUG] ReferenceTransformer: "google_container_node_pool.default" references: []
+2023-12-31T13:18:02.829-0600 [DEBUG] refresh: google_container_node_pool.default: no state, so not refreshing
+2023-12-31T13:18:02.831-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:02 [WARN] Truncating attribute path of 0 diagnostics for TypeSet: timestamp=2023-12-31T13:18:02.831-0600
+2023-12-31T13:18:02.838-0600 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_container_node_pool.default, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .upgrade_settings: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .management: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .node_config[0].shielded_instance_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .node_config[0].workload_metadata_config: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2023-12-31T13:18:02.840-0600 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-12-31T13:18:02.841-0600 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841061
+2023-12-31T13:18:02.842-0600 [DEBUG] provider: plugin exited
+2023-12-31T13:18:02.842-0600 [DEBUG] Building and walking plan graph for DestroyMode
+2023-12-31T13:18:02.842-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main" (*terraform.NodePlanDestroyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:02.842-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet" (*terraform.NodePlanDestroyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: [var.project_id var.location]
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "var.initial_node_count" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "output.master_version (expand)" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "output.endpoint (expand)" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "var.location" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "var.machine_type" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "var.cluster-name" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] ReferenceTransformer: "var.project_id" references: []
+2023-12-31T13:18:02.843-0600 [DEBUG] Starting graph walk: walkPlanDestroy
+2023-12-31T13:18:02.844-0600 [DEBUG] created provider logger: level=debug
+2023-12-31T13:18:02.844-0600 [INFO]  provider: configuring client automatic mTLS
+2023-12-31T13:18:02.851-0600 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5"]
+2023-12-31T13:18:02.853-0600 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841071
+2023-12-31T13:18:02.853-0600 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5
+2023-12-31T13:18:02.905-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: configuring server automatic mTLS: timestamp=2023-12-31T13:18:02.903-0600
+2023-12-31T13:18:02.964-0600 [DEBUG] provider.terraform-provider-google_v3.90.1_x5: plugin address: address=/tmp/plugin730907056 network=unix timestamp=2023-12-31T13:18:02.964-0600
+2023-12-31T13:18:02.964-0600 [DEBUG] provider: using plugin: version=5
+2023-12-31T13:18:03.172-0600 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/google\"]" changed the config value, but that value is unused
+2023-12-31T13:18:03.174-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:03.173-0600
+2023-12-31T13:18:03.174-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:03.174-0600
+2023-12-31T13:18:03.174-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:03.174-0600
+2023-12-31T13:18:03.174-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:03.174-0600
+2023-12-31T13:18:03.174-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:03.174-0600
+2023-12-31T13:18:03.658-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:03 [INFO] Terraform is using this identity: k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com: timestamp=2023-12-31T13:18:03.658-0600
+2023-12-31T13:18:03.664-0600 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-12-31T13:18:03.667-0600 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841071
+2023-12-31T13:18:03.667-0600 [DEBUG] provider: plugin exited
+2023-12-31T13:18:03.667-0600 [DEBUG] building apply graph to check for errors
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_container_cluster.k8s-cluster (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet (destroy)" (*terraform.NodeDestroyResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_container_node_pool.default (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main (destroy)" (*terraform.NodeDestroyResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.668-0600 [DEBUG] ReferenceTransformer: "var.project_id" references: []
+2023-12-31T13:18:03.668-0600 [DEBUG] ReferenceTransformer: "var.machine_type" references: []
+2023-12-31T13:18:03.668-0600 [DEBUG] ReferenceTransformer: "google_container_cluster.k8s-cluster (expand)" references: [google_compute_subnetwork.subnet (expand) var.location var.initial_node_count var.project_id var.cluster-name google_compute_network.vpc-main (expand)]
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "var.cluster-name" references: []
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "var.location" references: []
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: [var.location var.project_id]
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "google_container_node_pool.default (expand)" references: [var.cluster-name google_container_cluster.k8s-cluster (expand) var.location var.project_id var.machine_type]
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "var.initial_node_count" references: []
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "output.master_version (expand)" references: []
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "google_compute_network.vpc-main (expand)" references: [var.project_id]
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "google_compute_subnetwork.subnet (expand)" references: [var.project_id google_compute_network.vpc-main (expand) var.location]
+2023-12-31T13:18:03.669-0600 [DEBUG] ReferenceTransformer: "output.endpoint (expand)" references: []
+2023-12-31T13:18:03.669-0600 [DEBUG] pruneUnusedNodes: google_container_node_pool.default (expand) is no longer needed, removing
+2023-12-31T13:18:03.669-0600 [DEBUG] pruneUnusedNodes: google_container_cluster.k8s-cluster (expand) is no longer needed, removing
+2023-12-31T13:18:03.669-0600 [DEBUG] pruneUnusedNodes: google_compute_subnetwork.subnet (expand) is no longer needed, removing
+2023-12-31T13:18:03.669-0600 [DEBUG] pruneUnusedNodes: google_compute_network.vpc-main (expand) is no longer needed, removing
+2023-12-31T13:18:03.675-0600 [INFO]  backend/local: apply calling Apply
+2023-12-31T13:18:03.675-0600 [DEBUG] Building and walking apply graph for DestroyMode plan
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_container_node_pool.default (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_compute_network.vpc-main (destroy)" (*terraform.NodeDestroyResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_container_cluster.k8s-cluster (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ProviderTransformer: "google_compute_subnetwork.subnet (destroy)" (*terraform.NodeDestroyResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2023-12-31T13:18:03.676-0600 [DEBUG] ReferenceTransformer: "google_container_node_pool.default (expand)" references: [var.project_id var.cluster-name google_container_cluster.k8s-cluster (expand) var.location var.machine_type]
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "google_compute_subnetwork.subnet (expand)" references: [var.project_id google_compute_network.vpc-main (expand) var.location]
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "output.endpoint (expand)" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "output.master_version (expand)" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "google_container_cluster.k8s-cluster (expand)" references: [google_compute_subnetwork.subnet (expand) google_compute_network.vpc-main (expand) var.initial_node_count var.project_id var.cluster-name var.location]
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "var.cluster-name" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "var.project_id" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "var.location" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "var.initial_node_count" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "google_compute_network.vpc-main (expand)" references: [var.project_id]
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "var.machine_type" references: []
+2023-12-31T13:18:03.677-0600 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: [var.location var.project_id]
+2023-12-31T13:18:03.677-0600 [DEBUG] pruneUnusedNodes: google_container_node_pool.default (expand) is no longer needed, removing
+2023-12-31T13:18:03.677-0600 [DEBUG] pruneUnusedNodes: google_container_cluster.k8s-cluster (expand) is no longer needed, removing
+2023-12-31T13:18:03.677-0600 [DEBUG] pruneUnusedNodes: google_compute_subnetwork.subnet (expand) is no longer needed, removing
+2023-12-31T13:18:03.677-0600 [DEBUG] pruneUnusedNodes: google_compute_network.vpc-main (expand) is no longer needed, removing
+2023-12-31T13:18:03.678-0600 [DEBUG] Starting graph walk: walkDestroy
+2023-12-31T13:18:03.679-0600 [DEBUG] created provider logger: level=debug
+2023-12-31T13:18:03.679-0600 [INFO]  provider: configuring client automatic mTLS
+2023-12-31T13:18:03.687-0600 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5"]
+2023-12-31T13:18:03.688-0600 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841090
+2023-12-31T13:18:03.688-0600 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5
+2023-12-31T13:18:03.739-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: configuring server automatic mTLS: timestamp=2023-12-31T13:18:03.739-0600
+2023-12-31T13:18:03.797-0600 [DEBUG] provider.terraform-provider-google_v3.90.1_x5: plugin address: address=/tmp/plugin280688808 network=unix timestamp=2023-12-31T13:18:03.796-0600
+2023-12-31T13:18:03.797-0600 [DEBUG] provider: using plugin: version=5
+2023-12-31T13:18:04.128-0600 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/hashicorp/google\"]" changed the config value, but that value is unused
+2023-12-31T13:18:04.136-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:04.131-0600
+2023-12-31T13:18:04.136-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:04.131-0600
+2023-12-31T13:18:04.136-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [INFO] Authenticating using configured Google JSON 'credentials'...: timestamp=2023-12-31T13:18:04.131-0600
+2023-12-31T13:18:04.136-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-identity https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]: timestamp=2023-12-31T13:18:04.131-0600
+2023-12-31T13:18:04.136-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:04.131-0600
+2023-12-31T13:18:04.633-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [INFO] Terraform is using this identity: k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com: timestamp=2023-12-31T13:18:04.633-0600
+2023-12-31T13:18:04.637-0600 [INFO]  Starting apply for google_compute_subnetwork.subnet
+2023-12-31T13:18:04.637-0600 [DEBUG] google_compute_subnetwork.subnet: applying the planned Delete change
+2023-12-31T13:18:04.638-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Deleting Subnetwork "projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1": timestamp=2023-12-31T13:18:04.638-0600
+2023-12-31T13:18:04.638-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:04.638-0600
+2023-12-31T13:18:04.638-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:04.638-0600
+2023-12-31T13:18:04.638-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:04.638-0600
+2023-12-31T13:18:04.638-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:04 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+DELETE /compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1?alt=json HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+Content-Type: application/json
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:04.638-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:05 GMT
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "kind": "compute#operation",
+  "id": "2113691634435358850",
+  "name": "operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+  "operationType": "delete",
+  "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1",
+  "targetId": "1034502365974924808",
+  "status": "RUNNING",
+  "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+  "progress": 0,
+  "insertTime": "2023-12-31T11:18:05.499-08:00",
+  "startTime": "2023-12-31T11:18:05.517-08:00",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+  "region": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1"
+}
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:05.620-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:05.620-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:05.620-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [INFO] Instantiating GCE client for path https://compute.googleapis.com/compute/v1/: timestamp=2023-12-31T13:18:05.621-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Waiting for state to become: [DONE]: timestamp=2023-12-31T13:18:05.621-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:05.621-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:05.621-0600
+2023-12-31T13:18:05.621-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf?alt=json&prettyPrint=false HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: google-api-go-client/0.5 Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+X-Goog-Api-Client: gl-go/1.16.2 gdcl/20210830
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:05.621-0600
+2023-12-31T13:18:05.841-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:05 GMT
+Etag: fjiL0mdfGXcUcikCb4OUTMHWdVk=/uznL30uH4LMfZPCphTv30sSEnt0=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+ "kind": "compute#operation",
+ "id": "2113691634435358850",
+ "name": "operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+ "operationType": "delete",
+ "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1",
+ "targetId": "1034502365974924808",
+ "status": "RUNNING",
+ "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+ "progress": 0,
+ "insertTime": "2023-12-31T11:18:05.499-08:00",
+ "startTime": "2023-12-31T11:18:05.517-08:00",
+ "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+ "region": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1"
+}
+-----------------------------------------------------: timestamp=2023-12-31T13:18:05.841-0600
+2023-12-31T13:18:05.841-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:05.841-0600
+2023-12-31T13:18:05.841-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:05.841-0600
+2023-12-31T13:18:05.841-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [DEBUG] Got RUNNING while polling for operation operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf's status: timestamp=2023-12-31T13:18:05.841-0600
+2023-12-31T13:18:05.841-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:05 [TRACE] Waiting 10s before next try: timestamp=2023-12-31T13:18:05.841-0600
+2023-12-31T13:18:15.842-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:15 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:15.842-0600
+2023-12-31T13:18:15.842-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:15 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:15.842-0600
+2023-12-31T13:18:15.842-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:15 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf?alt=json&prettyPrint=false HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: google-api-go-client/0.5 Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+X-Goog-Api-Client: gl-go/1.16.2 gdcl/20210830
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:15.842-0600
+2023-12-31T13:18:16.076-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:16 GMT
+Etag: 99uciLd8o5fVnOHmfIaV9zgOXos=/e6Gn1JExscm4D8tz8WlYJnRTBQs=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+ "kind": "compute#operation",
+ "id": "2113691634435358850",
+ "name": "operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+ "operationType": "delete",
+ "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1",
+ "targetId": "1034502365974924808",
+ "status": "DONE",
+ "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+ "progress": 100,
+ "insertTime": "2023-12-31T11:18:05.499-08:00",
+ "startTime": "2023-12-31T11:18:05.517-08:00",
+ "endTime": "2023-12-31T11:18:14.253-08:00",
+ "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf",
+ "region": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1"
+}
+-----------------------------------------------------: timestamp=2023-12-31T13:18:16.076-0600
+2023-12-31T13:18:16.076-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:16.076-0600
+2023-12-31T13:18:16.076-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:16.076-0600
+2023-12-31T13:18:16.076-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Got DONE while polling for operation operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf's status: timestamp=2023-12-31T13:18:16.076-0600
+2023-12-31T13:18:16.076-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Finished deleting Subnetwork "projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1": map[string]interface {}{"id":"2113691634435358850", "insertTime":"2023-12-31T11:18:05.499-08:00", "kind":"compute#operation", "name":"operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf", "operationType":"delete", "progress":0, "region":"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1", "selfLink":"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/operations/operation-1704050284966-60dd31fea314d-08149bb0-ad635cdf", "startTime":"2023-12-31T11:18:05.517-08:00", "status":"RUNNING", "targetId":"1034502365974924808", "targetLink":"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/regions/us-east1/subnetworks/felsv-oceanic-cacao-409806-subnet-1", "user":"k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com"}: timestamp=2023-12-31T13:18:16.076-0600
+2023-12-31T13:18:16.079-0600 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2023-12-31T13:18:16.081-0600 [INFO]  Starting apply for google_compute_network.vpc-main
+2023-12-31T13:18:16.081-0600 [DEBUG] google_compute_network.vpc-main: applying the planned Delete change
+2023-12-31T13:18:16.081-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Deleting Network "projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1": timestamp=2023-12-31T13:18:16.081-0600
+2023-12-31T13:18:16.081-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Waiting for state to become: [success]: timestamp=2023-12-31T13:18:16.081-0600
+2023-12-31T13:18:16.082-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:16.082-0600
+2023-12-31T13:18:16.082-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:16.082-0600
+2023-12-31T13:18:16.082-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+DELETE /compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1?alt=json HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+Content-Type: application/json
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:16.082-0600
+2023-12-31T13:18:16.680-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:16 GMT
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "kind": "compute#operation",
+  "id": "5161312634250461335",
+  "name": "operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e",
+  "operationType": "delete",
+  "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+  "targetId": "6416941680376450612",
+  "status": "RUNNING",
+  "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+  "progress": 0,
+  "insertTime": "2023-12-31T11:18:16.513-08:00",
+  "startTime": "2023-12-31T11:18:16.526-08:00",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e"
+}
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:16.680-0600
+2023-12-31T13:18:16.680-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:16.680-0600
+2023-12-31T13:18:16.680-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:16.680-0600
+2023-12-31T13:18:16.680-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [INFO] Instantiating GCE client for path https://compute.googleapis.com/compute/v1/: timestamp=2023-12-31T13:18:16.680-0600
+2023-12-31T13:18:16.680-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Waiting for state to become: [DONE]: timestamp=2023-12-31T13:18:16.680-0600
+2023-12-31T13:18:16.681-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:16.681-0600
+2023-12-31T13:18:16.681-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:16.681-0600
+2023-12-31T13:18:16.681-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e?alt=json&prettyPrint=false HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: google-api-go-client/0.5 Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+X-Goog-Api-Client: gl-go/1.16.2 gdcl/20210830
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:16.681-0600
+2023-12-31T13:18:16.942-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:16 GMT
+Etag: -OAiQji_YDQ0FhgHu0lBiraAIRw=/ocrUvffHrzXmvOdZv24kD-n6WyE=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+ "kind": "compute#operation",
+ "id": "5161312634250461335",
+ "name": "operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e",
+ "operationType": "delete",
+ "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+ "targetId": "6416941680376450612",
+ "status": "RUNNING",
+ "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+ "progress": 0,
+ "insertTime": "2023-12-31T11:18:16.513-08:00",
+ "startTime": "2023-12-31T11:18:16.526-08:00",
+ "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e"
+}
+-----------------------------------------------------: timestamp=2023-12-31T13:18:16.942-0600
+2023-12-31T13:18:16.942-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:16.942-0600
+2023-12-31T13:18:16.942-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:16.942-0600
+2023-12-31T13:18:16.942-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [DEBUG] Got RUNNING while polling for operation operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e's status: timestamp=2023-12-31T13:18:16.942-0600
+2023-12-31T13:18:16.942-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:16 [TRACE] Waiting 10s before next try: timestamp=2023-12-31T13:18:16.942-0600
+2023-12-31T13:18:26.945-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:26 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:26.945-0600
+2023-12-31T13:18:26.945-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:26 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:26.945-0600
+2023-12-31T13:18:26.946-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:26 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e?alt=json&prettyPrint=false HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: google-api-go-client/0.5 Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+X-Goog-Api-Client: gl-go/1.16.2 gdcl/20210830
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:26.945-0600
+2023-12-31T13:18:27.234-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:27 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:27 GMT
+Etag: 3I-Bot9X8ieuCYONQv92pznqwTY=/PX5JavIOhqi7gAHpCen3Yx5zQJk=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+ "kind": "compute#operation",
+ "id": "5161312634250461335",
+ "name": "operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e",
+ "operationType": "delete",
+ "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+ "targetId": "6416941680376450612",
+ "status": "RUNNING",
+ "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+ "progress": 0,
+ "insertTime": "2023-12-31T11:18:16.513-08:00",
+ "startTime": "2023-12-31T11:18:16.526-08:00",
+ "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e"
+}
+-----------------------------------------------------: timestamp=2023-12-31T13:18:27.234-0600
+2023-12-31T13:18:27.234-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:27 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:27.234-0600
+2023-12-31T13:18:27.234-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:27 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:27.234-0600
+2023-12-31T13:18:27.234-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:27 [DEBUG] Got RUNNING while polling for operation operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e's status: timestamp=2023-12-31T13:18:27.234-0600
+2023-12-31T13:18:27.234-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:27 [TRACE] Waiting 10s before next try: timestamp=2023-12-31T13:18:27.234-0600
+2023-12-31T13:18:37.237-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Retry Transport: starting RoundTrip retry loop: timestamp=2023-12-31T13:18:37.237-0600
+2023-12-31T13:18:37.237-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Retry Transport: request attempt 0: timestamp=2023-12-31T13:18:37.237-0600
+2023-12-31T13:18:37.237-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Google API Request Details:
+---[ REQUEST ]---------------------------------------
+GET /compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e?alt=json&prettyPrint=false HTTP/1.1
+Host: compute.googleapis.com
+User-Agent: google-api-go-client/0.5 Terraform/1.6.6 (+https://www.terraform.io) Terraform-Plugin-SDK/2.5.0 terraform-provider-google/3.90.1
+X-Goog-Api-Client: gl-go/1.16.2 gdcl/20210830
+Accept-Encoding: gzip
+
+
+-----------------------------------------------------: timestamp=2023-12-31T13:18:37.237-0600
+2023-12-31T13:18:37.523-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Google API Response Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/2.0 200 OK
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Date: Sun, 31 Dec 2023 19:18:37 GMT
+Etag: vTW-xB4ZFe8IAAD0wg-ljzsigMY=/mpg5X1bdULvuEn4nhoMNTi3rli4=
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+ "kind": "compute#operation",
+ "id": "5161312634250461335",
+ "name": "operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e",
+ "operationType": "delete",
+ "targetLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1",
+ "targetId": "6416941680376450612",
+ "status": "DONE",
+ "user": "k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com",
+ "progress": 100,
+ "insertTime": "2023-12-31T11:18:16.513-08:00",
+ "startTime": "2023-12-31T11:18:16.526-08:00",
+ "endTime": "2023-12-31T11:18:34.002-08:00",
+ "selfLink": "https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e"
+}
+-----------------------------------------------------: timestamp=2023-12-31T13:18:37.523-0600
+2023-12-31T13:18:37.523-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Retry Transport: Stopping retries, last request was successful: timestamp=2023-12-31T13:18:37.523-0600
+2023-12-31T13:18:37.523-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Retry Transport: Returning after 1 attempts: timestamp=2023-12-31T13:18:37.523-0600
+2023-12-31T13:18:37.523-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Got DONE while polling for operation operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e's status: timestamp=2023-12-31T13:18:37.523-0600
+2023-12-31T13:18:37.523-0600 [INFO]  provider.terraform-provider-google_v3.90.1_x5: 2023/12/31 13:18:37 [DEBUG] Finished deleting Network "projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1": map[string]interface {}{"id":"5161312634250461335", "insertTime":"2023-12-31T11:18:16.513-08:00", "kind":"compute#operation", "name":"operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e", "operationType":"delete", "progress":0, "selfLink":"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/operations/operation-1704050296185-60dd3209563ca-9a4dca73-aad8ce8e", "startTime":"2023-12-31T11:18:16.526-08:00", "status":"RUNNING", "targetId":"6416941680376450612", "targetLink":"https://www.googleapis.com/compute/v1/projects/oceanic-cacao-409806/global/networks/felsv-oceanic-cacao-409806-vpc-1", "user":"k8s-admin@oceanic-cacao-409806.iam.gserviceaccount.com"}: timestamp=2023-12-31T13:18:37.523-0600
+2023-12-31T13:18:37.526-0600 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2023-12-31T13:18:37.528-0600 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/3.90.1/linux_amd64/terraform-provider-google_v3.90.1_x5 pid=841090
+2023-12-31T13:18:37.528-0600 [DEBUG] provider: plugin exited
